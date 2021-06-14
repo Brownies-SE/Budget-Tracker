@@ -19,6 +19,12 @@ request.onerror = function (event) {
   console.log(err);
 };
 
+function saveRecord(record) {
+    const transaction = db.transaction(["pending", "readwrite"]),
+    const store = trasnaction.ObjectStore("pending")
+    store.add(record)
+}
+
 function checkDatabase() {}
 
 window.addEventListener("online", checkDatabase);
